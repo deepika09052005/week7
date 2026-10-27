@@ -9,7 +9,7 @@ def home():
 
 @app.route("/submit", methods=["POST"])
 def submit():
-    name = request.form["name"]
+    name = request.form.get("name", "")
     return render_template("success.html", name=name)
 
 if __name__ == "__main__":
